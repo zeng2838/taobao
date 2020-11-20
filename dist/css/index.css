@@ -1,0 +1,100 @@
+.main {
+  width: 1190px;
+  margin: 0 auto; }
+
+body {
+  background: #f4f4f4; }
+
+.nav {
+  height: 35px;
+  font-size: 12px;
+  color: #999;
+  line-height: 35px;
+  background: #f5f5f5; }
+  .nav-left {
+    float: left; }
+    .nav-left ul {
+      line-height: 35px; }
+      .nav-left ul li {
+        float: left; }
+        .nav-left ul li .login {
+          color: #f40;
+          padding-right: 4px;
+          font-size: 6px; }
+        .nav-left ul li .sign {
+          color: #999;
+          padding: 12px; }
+          .nav-left ul li .sign:hover {
+            color: #f40; }
+      .nav-left ul .site {
+        width: 90px;
+        margin-right: 16px;
+        position: relative; }
+        .nav-left ul .site .show {
+          height: 280px;
+          overflow: auto;
+          padding: 8px 0 0 10px;
+          width: 240px;
+          position: absolute;
+          top: 28px;
+          background: #fff;
+          z-index: 10;
+          display: none;
+          cursor: pointer; }
+      .nav-left ul .site:hover {
+        background: #fff; }
+      .nav-left ul .site:hover .show {
+        display: block; }
+      .nav-left ul .disd:hover {
+        color: #f40;
+        cursor: pointer; }
+  .nav-right {
+    float: right;
+    padding-right: 8px; }
+    .nav-right ul {
+      width: 674px;
+      float: left; }
+      .nav-right ul li {
+        float: left;
+        width: 80px; }
+      .nav-right ul .mevu {
+        position: relative;
+        width: 70px; }
+        .nav-right ul .mevu .show1 {
+          position: absolute;
+          top: 30px;
+          width: 80px;
+          height: 80px;
+          background: #fff;
+          display: none; }
+          .nav-right ul .mevu .show1 p {
+            padding-top: 16px;
+            line-height: 6px;
+            color: #999; }
+      .nav-right ul .mevu:hover .show1 {
+        display: block; }
+      .nav-right ul .mevu:hover {
+        background: #fff; }
+      .nav-right ul li:hover {
+        color: #f40;
+        cursor: pointer; }
+
+.img-warp {
+  width: 100%;
+  background: #fd5632; }
+  .img-warp .imgs {
+    overflow: hidden; }
+    .img-warp .imgs img {
+      height: 70px; }
+
+.top-warp {
+  overflow: hidden;
+  padding-left: 20px; }
+  .top-warp .log {
+    width: 190px;
+    height: 80px;
+    float: left;
+    margin-top: 8px;
+    background: url(http://img.alicdn.com/tfs/TB1UDHOcwoQMeJjy0FoXXcShVXa-286-118.png) no-repeat;
+    background-size: 142px 58px;
+    margin-top: 34px; }

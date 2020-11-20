@@ -1,98 +1,129 @@
-// 变量 $+变量名
-$w:400px;
-$h:200px;
-$c:red;
-$len:50%*10; // 500%
-/* 标题样式 */
-h1{
-  width: $w;
-  height: $h;
-  color: $c;
-  background-color: #ccc;
+.main {
+    width: 1190px;
+    margin: 0 auto;
 }
 
-// sass中的注释有两种
-// 1. // sass有的注释，不会被编译到css文件中
-// /* xxx */ 会被编译到css文件中
+body {
+    background: #f4f4f4;
+}
 
-// 嵌套语法
-.box{
-  width: $w;
-  background-color: lightblue;
-  h2{
-    font-size: 30px;
-    color: blue;
-  }
-  .show{
-    width: 300px;
-    height: 100px;
-    span{
-      color: red;
+.nav {
+    height: 35px;
+    font-size: 12px;
+    color: #999;
+    line-height: 35px;
+    background: #f5f5f5;
+    &-left {
+        float: left;
+        ul {
+            line-height: 35px;
+            li {
+                float: left;
+                .login {
+                    color: #f40;
+                    padding-right: 4px;
+                    font-size: 6px;
+                }
+                .sign {
+                    color: #999;
+                    padding: 12px;
+                    &:hover {
+                        color: #f40
+                    }
+                }
+            }
+            .site {
+                width: 90px;
+                margin-right: 16px;
+                position: relative;
+                .show {
+                    height: 280px;
+                    overflow: auto;
+                    padding: 8px 0 0 10px;
+                    width: 240px;
+                    position: absolute;
+                    top: 28px;
+                    background: #fff;
+                    z-index: 10;
+                    display: none;
+                    cursor: pointer;
+                }
+            }
+            .site:hover {
+                background: #fff;
+            }
+            .site:hover .show {
+                display: block;
+            }
+            .disd:hover {
+                color: #f40;
+                cursor: pointer;
+            }
+        }
     }
-    p{
-      color: yellow;
+    &-right {
+        float: right;
+        padding-right: 8px;
+        ul {
+            // overflow: hidden;
+            width: 674px;
+            float: left;
+            li {
+                float: left;
+                width: 80px;
+            }
+            .mevu {
+                position: relative;
+                width: 70px;
+                .show1 {
+                    position: absolute;
+                    top: 30px;
+                    width: 80px;
+                    height: 80px;
+                    background: #fff;
+                    display: none;
+                    p {
+                        padding-top: 16px;
+                        line-height: 6px;
+                        color: #999;
+                    }
+                }
+            }
+            .mevu:hover .show1 {
+                display: block;
+            }
+            .mevu:hover {
+                background: #fff;
+            }
+            li:hover {
+                color: #f40;
+                cursor: pointer;
+            }
+        }
     }
-  }
 }
 
-// & 指向父选择器
-a{
-  color: blue;
-  &:hover{
-    color: red;
-  }
-}
-.content{
-  width: 500px;
-  &-title{
-    color: red;
-  }
-  &-main{
-    color: blue;
-  }
+.img-warp {
+    width: 100%;
+    background: #fd5632;
+    .imgs {
+        overflow: hidden;
+        img {
+            height: 70px;
+        }
+    }
 }
 
-// @import 引入外部样式
-@import 'header.scss';
-
-// @mixin 混合器
-@mixin nostyle {
-  list-style: none;
-  li{
-    padding: 0;
-    color: blue;
-  }
+.top-warp {
+    overflow: hidden;
+    padding-left: 20px;
+    .log {
+        width: 190px;
+        height: 80px;
+        float: left;
+        margin-top: 8px;
+        background: url(http://img.alicdn.com/tfs/TB1UDHOcwoQMeJjy0FoXXcShVXa-286-118.png) no-repeat;
+        background-size: 142px 58px;
+        margin-top: 34px;
+    }
 }
-.list{
-  width: 500px;
-  @include nostyle;
-}
-
-// 混合器传参
-@mixin common($w,$h,$c) {
-  width: $w;
-  height: $h;
-  color: $c;
-}
-.box1{
-  background-color: #ccc;
-  @include common(500px,200px,red);
-}
-.box2{
-  padding: 10px;
-  @include common(300px,100px,blue);
-}
-
-// 继承
-.box3{
-  padding: 20px;
-  margin: 10px;
-  font-size: 20px;
-}
-.box4{
-  width: 500px;
-  background: pink;
-  @extend .box3;
-}
-
-
