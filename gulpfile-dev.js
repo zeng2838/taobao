@@ -38,6 +38,11 @@ task('html', async() => {
         .pipe(dest('./dist'))
         .pipe(load.connect.reload())
 })
+task('font', async() => {
+    src('./font/*.*')
+        .pipe(dest('./dist'))
+        .pipe(load.connect.reload())
+})
 
 // 编译sass
 task('sass', async() => {

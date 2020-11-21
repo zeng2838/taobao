@@ -114,16 +114,216 @@ body {
     }
 }
 
-.top-warp {
+.secher-warp {
+    width: 100%;
+    padding-bottom: 16px;
+    background: #fff;
+    .top-warp {
+        overflow: hidden;
+        padding-left: 20px;
+        .log {
+            width: 190px;
+            height: 80px;
+            float: left;
+            margin-top: 8px;
+            background: url(http://img.alicdn.com/tfs/TB1UDHOcwoQMeJjy0FoXXcShVXa-286-118.png) no-repeat;
+            background-size: 142px 58px;
+            margin-top: 34px;
+        }
+        .chtab {
+            overflow: hidden;
+            font-size: 12px;
+            ul {
+                float: left;
+                margin-left: 64px;
+                padding-top: 30px;
+                li {
+                    text-align: center;
+                    float: left;
+                    width: 36px;
+                    line-height: 22px;
+                    margin-right: 4px;
+                    color: #F40;
+                    cursor: pointer;
+                }
+                li:hover {
+                    background: #ffeee5;
+                }
+                .baby {
+                    text-align: center;
+                    color: #fff;
+                    background: #ff5400;
+                    background-image: -webkit-linear-gradient(left, #ff9000 0, #ff5000 100%);
+                    font-weight: bold;
+                    border-top-right-radius: 6px;
+                    border-top-left-radius: 6px;
+                }
+                .baby:hover {
+                    background: #ff5400;
+                }
+            }
+        }
+        .search {
+            float: left;
+            width: 630px;
+            height: 40px;
+            margin-left: 46px;
+            form {
+                width: 630px;
+                height: 40px;
+                input {
+                    float: left;
+                    width: 554px;
+                    height: 40px;
+                    line-height: 36px;
+                    border: 2px solid #ff5000;
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                    border-right: none;
+                    padding: 0 6px 0 9px;
+                    padding-left: 20px;
+                    font-size: 12px;
+                }
+                button {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: #FFF;
+                    background: #ff5400;
+                    background-image: -webkit-linear-gradient(left, #ff9000 0, #ff5000 100%);
+                    cursor: pointer;
+                    height: 100%;
+                    border: none;
+                    width: 74px;
+                    height: 40px;
+                    border: none;
+                    text-align: center;
+                    border-top-right-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                }
+            }
+        }
+        .commodity {
+            width: 630px;
+            height: 20px;
+            padding-top: 5px;
+            font-size: 12px;
+            overflow: hidden;
+            float: left;
+            margin-left: 50px;
+            color: #999;
+            ul {
+                overflow: hidden;
+                li {
+                    float: left;
+                    margin-right: 3px;
+                    cursor: pointer;
+                }
+                li:hover {
+                    color: #ff5400;
+                }
+            }
+        }
+    }
+}
+
+.content {
     overflow: hidden;
-    padding-left: 20px;
-    .log {
+    .theme {
+        line-height: 30px;
+        h2 {
+            float: left;
+            text-align: center;
+            color: #fff;
+            width: 190px;
+            background: #ff5000;
+        }
+        .ullist {
+            height: 30px;
+            background-image: -webkit-linear-gradient(left, #ff9000 0, #ff5000 100%);
+            li {
+                float: left;
+                color: #fff;
+                padding-left: 9px;
+                padding-right: 6px;
+            }
+        }
+    }
+}
+
+.main-inner {
+    overflow: hidden;
+    .service {
         width: 190px;
-        height: 80px;
+        font-size: 14px;
         float: left;
-        margin-top: 8px;
-        background: url(http://img.alicdn.com/tfs/TB1UDHOcwoQMeJjy0FoXXcShVXa-286-118.png) no-repeat;
-        background-size: 142px 58px;
-        margin-top: 34px;
+        ul {
+            padding-top: 6px;
+            padding-bottom: 3px;
+            line-height: 32px;
+            border: 1px solid #ff9000;
+            border-top: none;
+            li {
+                overflow: hidden;
+                line-height: 34px;
+                height: 34px;
+                padding-left: 28px;
+                padding-right: 19px;
+                padding-top: 2px;
+                padding-bottom: 1px;
+                position: relative;
+                font-size: 14px;
+                font-weight: 400;
+                width: 100%;
+                font-weight: normal;
+                color: #666;
+                a {
+                    color: #666;
+                }
+            }
+            li:hover {
+                transition: all .5s linear;
+                background: #ffe4dc;
+            }
+             :hover a {
+                color: #ff5000;
+            }
+        }
+    }
+    .slideshow {
+        position: relative;
+        width: 520px;
+        float: left;
+        margin: 10px 6px 10px 10px;
+        .show-box {
+            overflow-x: auto;
+            width: 520px;
+            .show-main {
+                width: 6000px;
+                img {
+                    float: left;
+                }
+            }
+        }
+        .prev {
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            color: #fff;
+            top: 50%;
+            margin-top: -15px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .next {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            color: #fff;
+            top: 50%;
+            right: 0px;
+            margin-top: -15px;
+            text-align: center;
+            cursor: pointer;
+        }
     }
 }
