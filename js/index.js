@@ -100,25 +100,67 @@ var mySwiper = new Swiper('.swiper-container', {
     //一直循环切换
     loop: true,
     loopAdditionalSlides: 3,
-
-
 });
 
 
+//Tab 选项卡1
+var Tab1 = document.querySelector('.Tap1');
+var ullist = Tab1.querySelectorAll('  ul li');
+var ollist = Tab1.querySelectorAll(' ol li');
+for (let i = 0; i < ullist.length; i++) {
+    ullist[i].onmouseover = function() {
+        for (var j = 0; j < ullist.length; j++) {
+            ullist[j].className = '';
+            ollist[j].className = '';
+        }
+        ullist[i].className = 'li1';
+        ollist[i].className = 'show1';
+    }
+};
 
-// //如果你开启了clickable， 还可以鼠标划过按钮切换到指定的图片
-// for (i = 0; i < mySwiper.pagination.bullets.length; i++) {
-//     mySwiper.pagination.bullets[i].onmouseover = function() {
-//         this.click();
-//     };
-// }
+//Tab2
+var Tab2 = document.querySelector('.Tab2');
+var list1 = Tab2.querySelectorAll('ul li ');
+var divs = document.querySelectorAll('.showtimr')
 
-// //鼠标移入停止播放
-// mySwiper.el.onmouseover = function() {
-//     mySwiper.autoplay.stop();
-// }
+// for (let i = 0; i < list1.length; i++) {
+//     list1[i].onmouseover = function() {
+//         for (var j = 0; j < list1.length; j++) {
+//             list1[j].className = '';
+//             divs[j].className = '';
+//         }
+//         list1[i].className = 'li1';
+//         divs[i].className = 'inner1';
+//     }
+// };
 
-// //鼠标离开开始自动切换
-// mySwiper.el.onmouseout = function() {
-//     mySwiper.autoplay.start();
-// }
+
+var banner = document.querySelector('.banner-warp');
+var top1;
+var timer;
+var retrun1 = document.querySelector('.top-su')
+
+window.onscroll = function() {
+        //获取当前的滚动距离
+        top1 = document.documentElement.scrollTop
+            //判断多少显示
+        if (top1 > 50) {
+            banner.style.display = "block";
+        } else {
+            banner.style.display = "none"
+        }
+    }
+    //给点击对象绑定
+retrun1.onclick = function() {
+    //设置定时器让他帮我们一点点移动
+    var dsq = setInterval(function() {
+        //，每0.2秒钟走总滚动距离的10分之一
+        var span = Math.ceil(top1 / 10)
+            //获取剩下需要走的总滚动距离
+        document.documentElement.scrollTop = (top1 - span)
+            //如果滚动距离小于0时，关闭定时器
+        if (top1 <= 0) {
+            clearTimeout(dsq)
+        }
+    }, 20)
+}
