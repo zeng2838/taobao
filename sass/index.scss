@@ -263,6 +263,7 @@
                 line-height: 32px;
                 border: 1px solid #ff9000;
                 border-top: none;
+                background: #fff;
                 li {
                     overflow: hidden;
                     line-height: 34px;
@@ -412,19 +413,23 @@
                 font-size: 12px;
                 margin-left: 6px;
                 color: #ccc;
+                float: left;
             }
         }
     }
     
     .Have-warp {
         background: #fff;
+        overflow: hidden;
+        padding-bottom: 20px;
         .you {
             height: 24px;
-            overflow: hidden;
+            // overflow: hidden;
             padding: 20px 0 20px 20px;
+            padding-bottom: 20px;
             img {
                 height: 24px;
-                padding-right: 5px;
+                padding-right: 16px;
                 float: left;
             }
             span {
@@ -433,6 +438,285 @@
             }
         }
         .Have {
-            padding-left: 20px;
+            padding-left: 21px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            .Dlist {
+                width: 180px;
+                float: left;
+                margin-right: 14px;
+                img {
+                    width: 180px;
+                    height: 180px;
+                }
+                h4 {
+                    margin-left: 8px;
+                    margin-top: 5px;
+                    font-size: 16px;
+                    height: 30px;
+                    overflow: hidden;
+                    line-height: 28px;
+                    font-weight: normal;
+                    color: #3c3c3c;
+                }
+                span {
+                    color: #999;
+                    font-size: 14px;
+                    margin-left: 6px;
+                    margin-bottom: 18px;
+                    display: block;
+                }
+                i {
+                    font-size: 14px;
+                    margin-left: 20px;
+                    line-height: 22px;
+                    padding-top: 22px;
+                    // padding-bottom: 20px;
+                    color: #35b1ff;
+                }
+            }
+            img:hover {
+                box-shadow: 1px 1px 1px 1px;
+            }
+            .Dlist:hover h4 {
+                color: #f40;
+            }
+        }
+    }
+    
+    .sales {
+        height: 70px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        img {
+            height: 70px;
+        }
+    }
+    
+    .shops {
+        // background: #fff;
+        overflow: hidden;
+        position: relative;
+        &-left {
+            background: #fff;
+            width: 590px;
+            // height: 538px;
+            float: left;
+            // margin-right: 6px;
+            box-sizing: border-box;
+            // margin-right: 4px;
+            .topone {
+                line-height: 24px;
+                height: 46px;
+                padding: 20px 0 20px 20px;
+                img {
+                    height: 24px;
+                    float: left;
+                }
+                h4 {
+                    font-size: 12px;
+                    color: #ccc;
+                    padding-left: 10px;
+                    float: left;
+                }
+            }
+            ul {
+                padding-left: 20px;
+                overflow: hidden;
+                li {
+                    width: 271px;
+                    margin-top: 18px;
+                    margin-bottom: 8px;
+                    float: left;
+                    margin-right: 6px;
+                    h4 {
+                        color: #333;
+                        font-weight: normal;
+                        margin-bottom: 10px;
+                        margin-left: 2px;
+                    }
+                    img {
+                        width: 89px;
+                        height: 89px;
+                        float: left;
+                    }
+                    .imgbox {
+                        width: 180px;
+                        height: 180px;
+                        margin-right: 2px;
+                    }
+                    .imglast {
+                        margin-top: 2px;
+                    }
+                }
+                li:hover h4 {
+                    color: #ff5400;
+                }
+                .list3 {
+                    padding-top: 10px;
+                }
+            }
+        }
+        .txano {
+            position: absolute;
+            right: 0px;
+        }
+    }
+    
+    .feature {
+        overflow: hidden;
+        margin-top: 10px;
+        &-left {
+            background: #fff;
+            width: 840px;
+            overflow: hidden;
+            margin-right: 10px;
+            float: left;
+            h4 {
+                padding-left: 32px;
+                margin-top: 5px;
+                line-height: 48px;
+                font-size: 20px;
+                color: #AD45Df;
+                border-bottom: 1px solid #f4f4f4;
+            }
+            .item {
+                width: 210px;
+                border: 1px solid transparent;
+                border-right: 1px solid #f4f4f4;
+                border-bottom-color: #fff;
+                float: left;
+                height: 234px;
+                h5 {
+                    margin-top: 17px;
+                    color: #3c3c3c;
+                    line-height: 26px;
+                    height: 26px;
+                    font-weight: normal;
+                    padding-left: 20px;
+                    width: 60px;
+                }
+                h5:hover {
+                    color: #ff5400;
+                }
+                p {
+                    font-size: 12px;
+                    color: #ccc;
+                    padding-left: 18px;
+                }
+                .margin-warp {
+                    margin-top: 12px;
+                    padding-left: 26px;
+                    img {
+                        width: 150px;
+                        height: 150px;
+                        display: block;
+                    }
+                }
+            }
+            .item:hover {
+                border-color: #ff5400;
+            }
+        }
+        &-right {
+            float: left;
+            background: #fff;
+            width: 340px;
+            height: 288px;
+            padding: 20px;
+            border: 1px solid #fff;
+            img {
+                width: 300px;
+                height: 250px;
+            }
+        }
+        &-right:hover {
+            border-color: #ff5400;
+        }
+    }
+    
+    .shoplist {
+        background: #fff;
+        margin-top: 10px;
+        overflow: hidden;
+        h4 {
+            color: #ff9f00;
+            border-bottom: 1px solid #f4f4f4;
+            position: relative;
+            padding-left: 32px;
+            margin-top: 5px;
+            line-height: 48px;
+            font-size: 20px;
+        }
+        .items {
+            float: left;
+            padding: 20px 20px 0 20px;
+            border: 1px solid #fff;
+            color: #6c6c6c;
+            width: 238px;
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+            img {
+                display: block;
+                width: 199px;
+                height: 197px;
+            }
+            p {
+                width: 196px;
+                margin-top: 7px;
+                line-height: 22px;
+                height: 44px;
+                font-size: 14px;
+                color: #666;
+                font-weight: normal;
+                transition: color 0.3s;
+                overflow: hidden;
+            }
+            span {
+                display: inline-block;
+                padding-top: 20px;
+                color: #ff5400;
+                font-weight: 700;
+            }
+            i {
+                float: right;
+                padding-top: 20px;
+                font-size: 12px;
+                color: #ccc;
+            }
+            .similar {
+                display: none;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 236px;
+                height: 72px;
+                background: #FF5000;
+                p {
+                    margin: 0 auto;
+                    width: 120px;
+                    margin-top: 10px;
+                    line-height: 32px;
+                    height: 32px;
+                    font-size: 14px;
+                    font-weight: normal;
+                    border-bottom: 1px solid #FE964A;
+                    color: #fff;
+                }
+                a {
+                    color: #fff;
+                    padding-top: 5px;
+                    font-size: 12px;
+                    text-align: center;
+                    margin-left: 50px;
+                }
+            }
+        }
+        .items:hover {
+            border-color: #fd5632;
+        }
+        .items:hover .similar {
+            display: block;
         }
     }
