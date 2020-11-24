@@ -21,6 +21,8 @@ function automove() {
   }, 3000);
 }
 
+;
+
 function movenext() {
   imgindex++;
 
@@ -43,6 +45,8 @@ function movenext() {
   lis[lisindex].className = 'li1';
 }
 
+;
+
 function moveprev() {
   imgindex--;
 
@@ -63,6 +67,8 @@ function moveprev() {
 
   lis[lisindex].className = 'li1';
 }
+
+;
 
 next.onclick = function () {
   clearInterval(timer);
@@ -90,8 +96,9 @@ for (var i = 0; i < lis.length; i++) {
       "scrollLeft": imgindex * imgwidth
     });
   };
-} //轮播图
+}
 
+; //轮播图
 
 var mySwiper = new Swiper('.swiper-container', {
   autoplay: {
@@ -138,17 +145,7 @@ for (var _i = 0; _i < ullist.length; _i++) {
 
 var Tab2 = document.querySelector('.Tab2');
 var list1 = Tab2.querySelectorAll('ul li ');
-var divs = document.querySelectorAll('.showtimr'); // for (let i = 0; i < list1.length; i++) {
-//     list1[i].onmouseover = function() {
-//         for (var j = 0; j < list1.length; j++) {
-//             list1[j].className = '';
-//             divs[j].className = '';
-//         }
-//         list1[i].className = 'li1';
-//         divs[i].className = 'inner1';
-//     }
-// };
-
+var divs = document.querySelectorAll('.showtimr');
 var banner = document.querySelector('.banner-warp');
 var top1;
 var timer;

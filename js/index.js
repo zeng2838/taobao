@@ -17,7 +17,7 @@ function automove() {
     timer = setInterval(() => {
         movenext()
     }, 3000);
-}
+};
 
 function movenext() {
     imgindex++;
@@ -34,7 +34,7 @@ function movenext() {
         lisindex = 0;
     }
     lis[lisindex].className = 'li1';
-}
+};
 
 function moveprev() {
     imgindex--;
@@ -52,18 +52,18 @@ function moveprev() {
     }
     lis[lisindex].className = 'li1';
 
-}
+};
 
 next.onclick = function() {
     clearInterval(timer);
     movenext()
     automove()
-}
+};
 prev.onclick = function() {
     clearInterval(timer);
     moveprev()
     automove()
-}
+};
 
 for (var i = 0; i < lis.length; i++) {
     lis[i].index = i;
@@ -78,7 +78,7 @@ for (var i = 0; i < lis.length; i++) {
             "scrollLeft": imgindex * imgwidth
         });
     }
-}
+};
 
 //轮播图
 var mySwiper = new Swiper('.swiper-container', {
@@ -121,36 +121,23 @@ for (let i = 0; i < ullist.length; i++) {
 //Tab2
 var Tab2 = document.querySelector('.Tab2');
 var list1 = Tab2.querySelectorAll('ul li ');
-var divs = document.querySelectorAll('.showtimr')
-
-// for (let i = 0; i < list1.length; i++) {
-//     list1[i].onmouseover = function() {
-//         for (var j = 0; j < list1.length; j++) {
-//             list1[j].className = '';
-//             divs[j].className = '';
-//         }
-//         list1[i].className = 'li1';
-//         divs[i].className = 'inner1';
-//     }
-// };
-
-
+var divs = document.querySelectorAll('.showtimr');
 var banner = document.querySelector('.banner-warp');
 var top1;
 var timer;
 var retrun1 = document.querySelector('.top-su')
 
 window.onscroll = function() {
-        //获取当前的滚动距离
-        top1 = document.documentElement.scrollTop
-            //判断多少显示
-        if (top1 > 50) {
-            banner.style.display = "block";
-        } else {
-            banner.style.display = "none"
-        }
+    //获取当前的滚动距离
+    top1 = document.documentElement.scrollTop
+        //判断多少显示
+    if (top1 > 50) {
+        banner.style.display = "block";
+    } else {
+        banner.style.display = "none"
     }
-    //给点击对象绑定
+};
+//给点击对象绑定
 retrun1.onclick = function() {
     //设置定时器让他帮我们一点点移动
     var dsq = setInterval(function() {
@@ -163,4 +150,4 @@ retrun1.onclick = function() {
             clearTimeout(dsq)
         }
     }, 20)
-}
+};
