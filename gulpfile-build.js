@@ -45,6 +45,18 @@ async function sass() {
         .pipe(dest('./rev/css')) // 保存
 }
 
+
+// 处理php
+async function php() {
+    src('./php/*.php')
+        .pipe(load.php()) // sass转成css
+        .pipe(load.minifyCss()) // 压缩css
+        .pipe(load.rev()) // 给文件名添加哈希值
+        .pipe(dest('./dist/php')) // 保存
+        .pipe(load.rev.manifest()) // 生成记录哈希值的json文件
+        .pipe(dest('./rev/php')) // 保存
+}
+
 // 处理html
 async function html() {
     return new Promise((resolve, reject) => {
