@@ -153,9 +153,55 @@
             background: #333;
         }
     }
-    .banner-box {
-        width: 990px;
+}
+
+.banner-box {
+    width: 990px;
+    height: 150px;
+    // margin: 0 auto;
+    img {
         height: 150px;
-        margin: 0 auto;
+    }
+}
+
+.content {
+    padding-top: 40px;
+    .glass {
+        width: 420px;
+        margin: 0px 0px 0 20px;
+        overflow: hidden;
+        &-top {
+            width: 420px;
+            border: 1px solid #ccc;
+            width: 420px;
+            height: 418px;
+            .bootn {
+                // width: 420px;
+                img {
+                    width: 313px;
+                    height: 418px;
+                    margin-left: 52px;
+                }
+            }
+        }
+        &-bottom {
+            margin-top: 20px;
+            ul {
+                margin-left: 50px;
+                li {
+                    float: left;
+                    width: 56px;
+                    height: 56px;
+                    // margin: 0 0 0 16px;
+                    img {
+                        width: 46px;
+                        height: 60px;
+                    }
+                }
+                li:hover {
+                    border: 1px solid #000;
+                }
+            }
+        }
     }
 }
