@@ -34,3 +34,9 @@ ajax({
         showwarp.innerHTML = str;
     }
 })
+
+
+var personal = document.querySelector('.personal');
+var user = getCookie('login')
+console.log(user);
+personal.innerHTML = user

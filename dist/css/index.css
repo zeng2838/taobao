@@ -176,6 +176,9 @@ body {
       color: #999; }
       .secher-warp .top-warp .commodity ul {
         overflow: hidden; }
+        .secher-warp .top-warp .commodity ul .enter {
+          color: #999;
+          display: block; }
         .secher-warp .top-warp .commodity ul li {
           float: left;
           margin-right: 3px;

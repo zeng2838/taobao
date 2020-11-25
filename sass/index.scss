@@ -214,6 +214,10 @@
                 color: #999;
                 ul {
                     overflow: hidden;
+                    .enter {
+                        color: #999;
+                        display: block;
+                    }
                     li {
                         float: left;
                         margin-right: 3px;

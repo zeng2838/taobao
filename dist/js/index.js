@@ -176,3 +176,8 @@ retrun1.onclick = function () {
     }
   }, 20);
 };
+
+var personal = document.querySelector('.login');
+var user = getCookie('login');
+console.log(user);
+personal.innerHTML = user;
