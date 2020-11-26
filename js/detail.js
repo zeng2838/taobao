@@ -12,7 +12,6 @@ if (ids) {
         data: `id=${ids}`,
         success: function(data) {
             data = JSON.parse(data)
-            console.log(data);
             var str = `
 
             <div class="glass">
@@ -25,11 +24,11 @@ if (ids) {
                 </div>
                 <div class="glass-bottom">
                     <ul>
-                        <li><img src="./img/list1.png" alt=""></li>
-                        <li><img src="./img/list2.png" alt=""></li>
-                        <li><img src="./img/list3.png" alt=""></li>
-                        <li><img src="./img/list4.png" alt=""></li>
-                        <li><img src="./img/list5.png" alt=""></li>
+                        <li><img src="./img/1.png" alt=""></li>
+                        <li><img src="./img/2.png" alt=""></li>
+                        <li><img src="./img/3.png" alt=""></li>
+                        <li><img src="./img/4.png" alt=""></li>
+                        <li><img src="./img/5.png" alt=""></li>
                     </ul>
                 </div>
             </div>
@@ -115,12 +114,12 @@ if (ids) {
 
             </div>
             <div class="join">
-                <a href="#" class="purch">立即购买</a>
-                <a href="#" class="cat">加入购物车</a>
+                <span  class="purch">立即购买</span>
+                <span  class="cat">加入购物车</span>
             </div>
         </div>
         <div class="showimg">
-            <img src="https://img.alicdn.com/imgextra/https://img.alicdn.com/imgextra/i1/2159486323/O1CN01qzFILi1wZyx7fWCPz_!!2159486323.jpg_430x430q90.jpg" alt="">
+            <img src="${data.tp}" alt="">
         </div>
 `
             content.innerHTML = str
@@ -137,7 +136,7 @@ if (ids) {
             var mask = document.querySelector('.mask')
             var maxBox = document.querySelector('.showimg')
             var maxImg = document.querySelector('.showimg img')
-            console.log(minBox, maxImg);
+
             // 鼠标移动，mask跟随移动
             minBox.onmousemove = function(e) {
                 var e = e || event;
@@ -198,9 +197,37 @@ if (ids) {
 
 
             }
+            var join = document.querySelector('.join');
+            join.onclick = function(e) {
+                var e = e || window.event;
+                var target = e.target || e.srcElement
+                if (target.className === 'cat') {
+                    var shopping = localStorage.getItem('shopping');
+                    if (shopping) {
+                        shopping = JSON.parse(shopping);
+                        var a = 0;
+                        shopping.forEach(item => {
+                            if (item.id === data.id) {
+                                item.number++;
+                                localStorage.setItem('shopping', JSON.stringify(shopping));
+                                a = 1
+                            }
+                        })
 
+                        if (!a) {
+                            data.number = 1;
 
+                            shopping.push(data)
+                            localStorage.setItem('shopping', JSON.stringify(shopping))
+                        }
 
+                    } else {
+                        data.number = 1;
+                        localStorage.setItem('shopping', JSON.stringify([data]))
+                    }
+                    alert('添加购物车成功')
+                }
+            }
 
         }
     })
