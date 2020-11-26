@@ -25,7 +25,7 @@ ajax({
                         </a>
                         <div class="shopping-bottom">
                             <a href="#" class="store">进入店铺></a>
-                            <a href="./detali.html" class="rush">立即抢购></a>
+                            <a href="./detail.html?id=${item.id}" class="rush">立即抢购></a>
                         </div>
                     </div>
                 </div>                     

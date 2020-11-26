@@ -157,4 +157,8 @@ retrun1.onclick = function() {
 var personal = document.querySelector('.login');
 var user = getCookie('login')
 console.log(user);
-personal.innerHTML = user
+if (user) {
+    personal.innerHTML = user
+} else {
+    personal.innerHTML = '亲请登录'
+}
