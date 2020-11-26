@@ -45,7 +45,7 @@ but.onclick = function() {
             if (data === '1') {
                 alert('登录成功');
                 //登入成功之后把账号保存到cookie中
-                setCookie('login', user1, 3000)
+                setCookie('login', user1, 6000)
                     //获取地址栏的参数
                 var sech1 = location.search
                 if (sech1) {
