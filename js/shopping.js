@@ -4,6 +4,7 @@ var href = location.href;
 var shopping;
 var contentmain = document.querySelector('.shopping-main');
 var cont = document.querySelector('.content');
+var adds;
 if (login) {
     user.innerHTML = login
 }
@@ -30,6 +31,7 @@ function showCart() {
         shopping = localStorage.getItem('shopping');
         if (shopping) {
             shopping = JSON.parse(shopping);
+            var lengths = shopping.length;
             var quanxuan = shopping.every(item => {
                 return item.is_select == 1
             })
@@ -38,7 +40,7 @@ function showCart() {
             <div class="shopping-top">
             <ul>
                 <li class="li1">
-                    <a href="#" class="a1">全部商品 <i>2</i></a>
+                    <a href="#" class="a1">全部商品 <i class='ili'></i></a>
                 </li>
                 <li>
                     <a href="#">降价商品 <i>0</i></a>
@@ -69,7 +71,6 @@ function showCart() {
         </div>
           
             `
-
             shopping.forEach(item => {
                 str1 += `
                 <div class="listbox">
@@ -105,7 +106,7 @@ function showCart() {
     
                             <li class="unit">
                                 <p class="origin">￥<i>${item.origin}</i></p>
-                                <p><i>${item.price}</i></p>
+                                <p><i >${item.price}</i></p>
                             </li>
                             <li>
                                 <div class="number">
@@ -132,7 +133,7 @@ function showCart() {
                `
             })
 
-
+            adds = tatoll()
             str1 += `
                
             <div class="final">
@@ -148,10 +149,10 @@ function showCart() {
             </div>
             <div class="final-right">
                 <div class="sele">
-                    <a href="#">已选商品<i class="select">0</i>件</a>
+                    <a href="#">已选商品<i class="select">${adds[0]}</i>件</a>
                 </div>
                 <div class="tet">
-                    <a href="#">合计(不含运费): <span class="plice">0.00</span></a>
+                    <a href="#">合计(不含运费): <span class="plice">${adds[1]}</span></a>
                 </div>
                 <button class="button">结算</button>
             </div>
@@ -169,7 +170,8 @@ function showCart() {
     }
 }
 
-
+var li1 = document.querySelector('.ili');
+li1.innerHTML = shopping.length
 contentmain.onclick = function(e) {
     var e = e || window.event;
     var target = e.target || e.srcElement;
@@ -210,7 +212,7 @@ contentmain.onclick = function(e) {
         })
         localStorage.setItem('shopping', JSON.stringify(shopping));
         showCart()
-        if (shopping.length > 1) {
+        if (shopping.length < 1) {
             showdiv()
         }
     }
@@ -220,61 +222,71 @@ contentmain.onclick = function(e) {
         })
         localStorage.setItem('shopping', JSON.stringify(shopping));
         showCart()
-        if (shopping.length > 1) {
+        if (shopping.length < 1) {
             showdiv()
         }
     }
 
 
     if (target.className === 'plus') {
-        console.log(111);
-    }
-    // if (target.className === 'del') {
-    //     for (var i = 0; i < list1.length; i++) {
-    //         if (list1[i].checked) {
-    //             list1[i].parentNode.parentNode.parentNode.parentNode.remove()
-    //         }
-    //         console.log(shopping);
-    //         localStorage.setItem('shopping', JSON.stringify(shopping))
-    //             // showCart()
-    //     }
-
-    // }
-
-
-    if (target.className === 'delete') {
-        var dataid = target.getAttribute('data-id');
-        shopping = shopping.filter(item => {
-            return item.id != dataid
-        })
-
-        localStorage.setItem('shopping', JSON.stringify(shopping))
-        showCart()
-
-    }
-
-    if (target.className === 'plus') {
-        var id3 = target.getAttribute('data-id')
+        var data3 = target.getAttribute('data-id');
         shopping.forEach(item => {
-            if (item.id === id3) {
-                item.number++
-            }
-        })
-        localStorage.setItem('shopping', JSON.stringify(shopping));
-        showCart()
-    }
-    if (target.className === 'lose') {
-        var id4 = target.getAttribute('data-id')
-        shopping.forEach(item => {
-            if (item.id === id4 && item.number > 1) {
+            if (item.id === data3 && item.number > 1) {
                 item.number--
             }
         })
         localStorage.setItem('shopping', JSON.stringify(shopping));
         showCart()
+        abc()
     }
 
+    if (target.className === 'lose') {
+        var data4 = target.getAttribute('da-id');
+        console.log(data4);
+        shopping.forEach(item => {
+            if (item.id === data4) {
+                item.number++
+            }
+        })
+        localStorage.setItem('shopping', JSON.stringify(shopping));
+        showCart()
+        abc()
+    }
+
+
+    if (target.className === 'button') {
+        if (adds[0] > 0) {
+            if (confirm('您确定要购买吗')) {
+                alert('您已成功支付' + adds[1])
+
+                shopping = shopping.filter(item => {
+                    return item.is_select != 1
+                });
+            }
+        } else {
+            alert('您还未选中商品')
+        }
+        localStorage.setItem('shopping', JSON.stringify(shopping));
+        showCart();
+        if (shopping.length < 1) {
+            showdiv()
+        }
+
+    }
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
 if (shopping.length === 0) {
     showdiv()
 }
@@ -291,9 +303,23 @@ function tatoll() {
             //累加计算被选中商品的所有数量
             num += parseInt(item.number)
                 //累加计算被选中商品的价格,数量乘以价格
-            numP += parseInt(item.number) * parseFloat(item.jiage)
+            numP += parseInt(item.number) * parseFloat(item.origin)
 
         }
     })
     return [num, numP.toFixed(2)]
 }
+
+
+
+function abc() {
+    var lists = document.querySelectorAll('.list')
+    lists.forEach(function(item) {
+        var jiage = $(item).find('.origin').children().html()
+        var num = $(item).find('.number').children().eq(1).val()
+        var xiaoji = parseFloat(jiage) * parseInt(num)
+        $(item).find('.money').children().children().html(xiaoji.toFixed(2))
+    })
+
+}
+abc()

@@ -427,7 +427,7 @@
                 }
                 .tet {
                     float: left;
-                    width: 161px;
+                    width: 225px;
                     a {
                         color: #3c3c3c;
                         span {
@@ -445,11 +445,14 @@
                     color: #fff;
                     border-left: 1px solid #e7e7e7;
                     width: 119px;
-                    cursor: not-allowed;
+                    cursor: pointer;
                     text-decoration: none;
                     border: none;
                     outline: none;
                     font-size: 20px;
+                }
+                button:hover {
+                    background: pink;
                 }
             }
         }
