@@ -49,13 +49,13 @@ function showCart() {
                     <a href="#">库存紧张  <i>0</i></a>
                 </li>
                 <div class="sum">
-                    <span>已选商品(不含运费) <i>0.00</i></span>
+                    <span>已选商品(不含运费) <i class='reobs'></i></span>
                     <a href="#">结算</a>
                 </div>
             </ul>
             <div class="list-top">
                 <ul>
-                    <li class="i1"><input type="checkbox"> &nbsp;全选</li>
+                    <li class="i1"><input type="checkbox" class='all'${quanxuan?'checked':''}> &nbsp;全选</li>
                     <li class="i2">商品信息</li>
 
                     <div class="ul-r">
@@ -163,6 +163,9 @@ function showCart() {
 
             var li1 = document.querySelector('.ili');
             li1.innerHTML = shopping.length
+
+            var reobs = document.querySelector('.reobs');
+            reobs.innerHTML = adds[1]
         } else {
             showdiv()
         }
@@ -187,6 +190,7 @@ contentmain.onclick = function(e) {
         })
         localStorage.setItem('shopping', JSON.stringify(shopping));
         showCart()
+        abc()
     }
 
     if (target.name === 'radio') {
@@ -202,6 +206,7 @@ contentmain.onclick = function(e) {
         })
         localStorage.setItem('shopping', JSON.stringify(shopping));
         showCart()
+        abc()
     }
 
 
@@ -212,10 +217,12 @@ contentmain.onclick = function(e) {
         })
         localStorage.setItem('shopping', JSON.stringify(shopping));
         showCart()
+        abc()
         if (shopping.length < 1) {
             showdiv()
         }
     }
+
     if (target.className === 'del') {
         shopping = shopping.filter(item => {
             return item.is_select != 1;
@@ -225,8 +232,8 @@ contentmain.onclick = function(e) {
         if (shopping.length < 1) {
             showdiv()
         }
+        abc()
     }
-
 
     if (target.className === 'plus') {
         var data3 = target.getAttribute('data-id');
@@ -252,8 +259,7 @@ contentmain.onclick = function(e) {
         abc()
     }
 
-
-    if (target.className === 'button') {
+    if (target.innerHTML === '结算') {
         if (adds[0] > 0) {
             if (confirm('您确定要购买吗')) {
                 alert('您已成功支付' + adds[1])
@@ -270,16 +276,9 @@ contentmain.onclick = function(e) {
         if (shopping.length < 1) {
             showdiv()
         }
+        abc()
 
     }
-
-
-
-
-
-
-
-
 };
 
 if (shopping.length === 0) {
@@ -311,8 +310,8 @@ function abc() {
         var jiage = $(item).find('.origin').children().html()
         var num = $(item).find('.number').children().eq(1).val()
         var xiaoji = parseFloat(jiage) * parseInt(num)
-        $(item).find('.money').children().children().html(xiaoji.toFixed(2))
+        $(item).find('.money').children().children().html('￥' + xiaoji.toFixed(2))
     })
 
 };
-abc();
+abc()
