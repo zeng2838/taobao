@@ -1,5 +1,4 @@
 var showwarp = document.querySelector('.shopping-warp');
-console.log(showwarp);
 var data;
 ajax({
     url: './php/list.php',
@@ -33,10 +32,10 @@ ajax({
         })
         showwarp.innerHTML = str;
     }
-})
+});
 
 
 var personal = document.querySelector('.personal');
-var user = getCookie('login')
+var user = getCookie('login');
 console.log(user);
-personal.innerHTML = user
+personal.innerHTML = user;

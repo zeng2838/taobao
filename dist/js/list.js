@@ -1,7 +1,6 @@
 "use strict";
 
 var showwarp = document.querySelector('.shopping-warp');
-console.log(showwarp);
 var data;
 ajax({
   url: './php/list.php',

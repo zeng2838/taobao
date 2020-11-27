@@ -73,7 +73,6 @@ button.onclick = function() {
         url: './php/register.php',
         data: `nn=${user1}&pp=${pass1}`,
         success: function(data) {
-            console.log(data);
             if (data === '1') {
                 alert('账户已注册');
             } else {

@@ -50,10 +50,9 @@ async function sass() {
 async function php() {
     src('./php/*.php')
         .pipe(load.php()) // sass转成css
-        .pipe(load.minifyCss()) // 压缩css
+        .pipe(load.minifyphp()) // 压缩css
         .pipe(load.rev()) // 给文件名添加哈希值
         .pipe(dest('./dist/php')) // 保存
-        .pipe(load.rev.manifest()) // 生成记录哈希值的json文件
         .pipe(dest('./rev/php')) // 保存
 }
 
@@ -79,4 +78,6 @@ task('build', async() => {
     await script()
     await sass()
     await html()
+
+    await php()
 })

@@ -228,7 +228,13 @@ if (ids) {
                     alert('添加购物车成功')
                 }
             }
-
+            var logins = getCookie('login');
+            var masi = document.querySelector('.logg');
+            if (logins) {
+                masi.innerHTML = logins
+            } else {
+                masi.innerHTML = '亲,请登录'
+            }
         }
     })
 

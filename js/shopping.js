@@ -1,5 +1,5 @@
 var login = getCookie('login');
-var user = document.querySelector('.li1 a')
+var user = document.querySelector('.li1 a');
 var href = location.href;
 var shopping;
 var contentmain = document.querySelector('.shopping-main');
@@ -7,7 +7,7 @@ var cont = document.querySelector('.content');
 var adds;
 if (login) {
     user.innerHTML = login
-}
+};
 
 function showdiv() {
     var divs = `
@@ -23,8 +23,8 @@ function showdiv() {
     `
     cont.innerHTML = divs
 
-}
-showCart()
+};
+showCart();
 
 function showCart() {
     if (login) {
@@ -160,6 +160,9 @@ function showCart() {
             
             `
             contentmain.innerHTML = str1
+
+            var li1 = document.querySelector('.ili');
+            li1.innerHTML = shopping.length
         } else {
             showdiv()
         }
@@ -168,10 +171,7 @@ function showCart() {
         alert('您还未登录')
         location.href = './login.html?Url=' + href
     }
-}
-
-var li1 = document.querySelector('.ili');
-li1.innerHTML = shopping.length
+};
 contentmain.onclick = function(e) {
     var e = e || window.event;
     var target = e.target || e.srcElement;
@@ -242,7 +242,6 @@ contentmain.onclick = function(e) {
 
     if (target.className === 'lose') {
         var data4 = target.getAttribute('da-id');
-        console.log(data4);
         shopping.forEach(item => {
             if (item.id === data4) {
                 item.number++
@@ -281,15 +280,11 @@ contentmain.onclick = function(e) {
 
 
 
-}
-
-
-
-
+};
 
 if (shopping.length === 0) {
     showdiv()
-}
+};
 
 function tatoll() {
     //所选商品总数量
@@ -308,9 +303,7 @@ function tatoll() {
         }
     })
     return [num, numP.toFixed(2)]
-}
-
-
+};
 
 function abc() {
     var lists = document.querySelectorAll('.list')
@@ -321,5 +314,5 @@ function abc() {
         $(item).find('.money').children().children().html(xiaoji.toFixed(2))
     })
 
-}
-abc()
+};
+abc();
